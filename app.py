@@ -6,6 +6,7 @@ st.title("Hydrogen Colour Explorer")
 st.write("Comparing hydrogen production pathways across cost, emissions and maturity.")
 
 df = pd.read_excel(r"C:\Hydrogen Research\03_Data\Raw_Originals\H2_Colour_Explorer_Data.xlsx", sheet_name="H2 Colour Data", header=3)
+
 df = df.dropna(how='all', axis=1)
 df = df.dropna(how='all', axis=0)
 df.columns = df.columns.str.replace('\n', ' ', regex=False).str.strip()
@@ -28,4 +29,4 @@ st.plotly_chart(fig)
 
 gwp_df = df[[colour_col, gwp_col]].dropna()
 fig2 = px.bar(gwp_df, x=colour_col, y=gwp_col, title="GWP100 by Hydrogen Colour (kgCO₂eq/kgH₂)", labels={colour_col: "Colour", gwp_col: "GWP100 (kgCO₂eq/kg)"})
-st.plotly_chart(fig2)
+st.plotly_chart(fig2)   
