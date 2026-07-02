@@ -5,7 +5,7 @@ import plotly.express as px
 st.title("Hydrogen Colour Explorer")
 st.write("Comparing hydrogen production pathways across cost, emissions and maturity.")
 
-df = pd.read_excel(r"C:\Hydrogen Research\03_Data\Raw_Originals\H2_Colour_Explorer_Data.xlsx", sheet_name="H2 Colour Data", header=3)
+df = pd.read_excel("H2_Colour_Explorer_Data.xlsx", sheet_name="H2 Colour Data", header=3)
 
 df = df.dropna(how='all', axis=1)
 df = df.dropna(how='all', axis=0)
